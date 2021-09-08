@@ -1,4 +1,4 @@
-node ('Ubuntu-app-agent'){  
+node ('appServer-agent'){  
     def app
     stage('Cloning Git') {
         /* Let's make sure we have the repository cloned to our workspace */
@@ -12,7 +12,7 @@ node ('Ubuntu-app-agent'){
     }
     stage('Push-to-dockerhub') {
     
-    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_id') {
+    docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {
             app.push("latest")
         			}
          }
