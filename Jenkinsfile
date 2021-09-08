@@ -8,7 +8,7 @@ node ('appServer-agent'){
     stage('Build-and-Tag') {
     /* This builds the actual image; synonymous to
          * docker build on the command line */
-        app = docker.build("satyendra22/snake")
+        app = docker.build("satyendra22/game_snake")
     }
     stage('Push-to-dockerhub') {
     
